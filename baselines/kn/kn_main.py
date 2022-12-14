@@ -231,7 +231,7 @@ def apply_kn_to_model(
     )
     request_rewrite = deepcopy(request)
     print(request_rewrite)
-    text = [request_rewrite["prompt"].format(request_rewrite["subject"])]
+    text = [request_rewrite[0]["prompt"].format(request_rewrite[0]["subject"])]
     ground_truth = request_rewrite["target_true"]["str"]
     target = request_rewrite["target_new"]["str"]
 
