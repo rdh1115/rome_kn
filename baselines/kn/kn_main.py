@@ -256,7 +256,7 @@ def apply_kn_to_model(
         result = result['scores']
         max_idx = (result == torch.max(result)).nonzero()
         print(max_idx)
-        position, layer_idx = max_idx.squeeze()
+        position, layer_idx = torch.squeeze(max_idx)
         refined_neurons = [[layer_idx, position]]
         print(refined_neurons)
 
