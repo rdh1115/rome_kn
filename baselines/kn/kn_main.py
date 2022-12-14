@@ -9,7 +9,7 @@ from .kn_hparams import KNHyperParams
 from .knowledge_neurons.knowledge_neurons import KnowledgeNeurons, model_type
 
 from util import nethook
-
+from collections import defaultdict
 from experiments.causal_trace import (
     ModelAndTokenizer,
     layername,
@@ -35,7 +35,7 @@ def trace_with_patch(
         noise=0.1,  # Level of noise to add
         trace_layers=None,  # List of traced outputs to return
 ):
-    prng = numpy.random.RandomState(1)  # For reproducibility, use pseudorandom noise
+    prng = np.random.RandomState(1)  # For reproducibility, use pseudorandom noise
     patch_spec = defaultdict(list)
     for t, l in states_to_patch:
         patch_spec[l].append(t)
