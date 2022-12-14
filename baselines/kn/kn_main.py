@@ -230,6 +230,7 @@ def apply_kn_to_model(
         device="cuda",
     )
     request_rewrite = deepcopy(request)
+    print(request_rewrite)
     text = [request_rewrite["prompt"].format(request_rewrite["subject"])]
     ground_truth = request_rewrite["target_true"]["str"]
     target = request_rewrite["target_new"]["str"]
