@@ -250,7 +250,7 @@ def apply_kn_to_model(
         # run causal tracing on the prompt
         mt = ModelAndTokenizer(model=model, tokenizer=tok)
         result = calculate_hidden_flow(
-            mt, text, request_rewrite["subject"], samples=10, noise=0.1, window=10, kind=None
+            mt, text, request_rewrite[0]["subject"], samples=10, noise=0.1, window=10, kind=None
         )
         refined_neurons = [(result==torch.max(result)).nonzero().squeeze()]
 

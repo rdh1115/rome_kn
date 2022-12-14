@@ -18,7 +18,6 @@ def main(
 ):  # runs = None -> all runs
     summaries = []
     uncompressed = []
-
     for run_dir in (RESULTS_DIR / dir_name if not abs_path else dir_name).iterdir():
         # Skip if we're not interested
         if runs is not None and all(run not in str(run_dir) for run in runs):
@@ -38,7 +37,7 @@ def main(
             case_id = data["case_id"]
             if first_n_cases is not None and case_id >= first_n_cases:
                 break
-
+            print(case_id)
             cur_sum["time"].append(data["time"])
 
             for prefix in ["pre", "post"]:
