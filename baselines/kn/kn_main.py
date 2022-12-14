@@ -232,8 +232,8 @@ def apply_kn_to_model(
     request_rewrite = deepcopy(request)
     print(request_rewrite)
     text = [request_rewrite[0]["prompt"].format(request_rewrite[0]["subject"])]
-    ground_truth = request_rewrite["target_true"]["str"]
-    target = request_rewrite["target_new"]["str"]
+    ground_truth = request_rewrite[0]["target_true"]["str"]
+    target = request_rewrite[0]["target_new"]["str"]
 
     kn.model = kn.model.to(kn.device)
     if not use_causal:
