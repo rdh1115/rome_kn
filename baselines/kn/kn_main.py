@@ -252,7 +252,6 @@ def apply_kn_to_model(
         result = calculate_hidden_flow(
             mt, text[0], request_rewrite[0]["subject"], samples=10, noise=0.1, window=10, kind=None
         )
-        print(result)
         result = result['scores']
         refined_neurons = [(result==torch.max(result)).nonzero().squeeze()]
 
