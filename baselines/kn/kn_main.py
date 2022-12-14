@@ -255,7 +255,10 @@ def apply_kn_to_model(
 
         result = result['scores']
         max_idx = (result == torch.max(result)).nonzero()
+        if len(max_idx.shape) != 1:
+            max_idx = max_idx[np.random.choice(len(max_idx))]
         print(max_idx)
+
         position, layer_idx = torch.squeeze(max_idx)
         refined_neurons = [[layer_idx, position]]
         print(refined_neurons)
