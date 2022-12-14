@@ -123,7 +123,7 @@ def main(
                 hparams,
                 copy=False,
                 return_orig_weights=True,
-                use_causal=use_causal
+                use_causal=use_causal,
                 **args_conserve_memory,
             )
             exec_time = time() - start
