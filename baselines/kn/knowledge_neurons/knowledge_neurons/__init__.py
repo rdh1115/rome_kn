@@ -10,7 +10,7 @@ from .data import PARAREL_RELATION_NAMES, pararel, pararel_expanded
 from .knowledge_neurons import KnowledgeNeurons
 
 BERT_MODELS = ["bert-base-uncased", "bert-base-multilingual-uncased"]
-GPT2_MODELS = ["gpt2", "gpt2-xl"]
+GPT2_MODELS = ["gpt2", "gpt2-xl", 'gpt2-medium']
 GPT_NEO_MODELS = [
     "EleutherAI/gpt-neo-125M",
     "EleutherAI/gpt-neo-1.3B",

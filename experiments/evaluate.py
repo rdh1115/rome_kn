@@ -192,7 +192,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset_size_limit",
         type=int,
-        default=10000,
+        default=1000,
         help="Truncate CounterFact to first n records.",
     )
     parser.add_argument(
